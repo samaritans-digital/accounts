@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html lang="en-GB">
+<head>
+    <title>Request an account</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function(){
+        const FORM_TIME_START = Math.floor((new Date).getTime()/1000);
+        let formElement = document.getElementById("tfa_0");
+        if (null === formElement) {
+        formElement = document.getElementById("0");
+        }
+        let appendJsTimerElement = function(){
+        let formTimeDiff = Math.floor((new Date).getTime()/1000) - FORM_TIME_START;
+        let cumulatedTimeElement = document.getElementById("tfa_dbCumulatedTime");
+        if (null !== cumulatedTimeElement) {
+        let cumulatedTime = parseInt(cumulatedTimeElement.value);
+        if (null !== cumulatedTime && cumulatedTime > 0) {
+            formTimeDiff += cumulatedTime;
+        }
+        }
+        let jsTimeInput = document.createElement("input");
+        jsTimeInput.setAttribute("type", "hidden");
+        jsTimeInput.setAttribute("value", formTimeDiff.toString());
+        jsTimeInput.setAttribute("name", "tfa_dbElapsedJsTime");
+        jsTimeInput.setAttribute("id", "tfa_dbElapsedJsTime");
+        jsTimeInput.setAttribute("autocomplete", "off");
+        if (null !== formElement) {
+        formElement.appendChild(jsTimeInput);
+        }
+        };
+        if (null !== formElement) {
+        if(formElement.addEventListener){
+        formElement.addEventListener('submit', appendJsTimerElement, false);
+        } else if(formElement.attachEvent){
+        formElement.attachEvent('onsubmit', appendJsTimerElement);
+        }
+        }
+        });
+    </script>
+    <link href="https://samaritans.tfaforms.net/dist/form-builder/5.0.0/wforms-layout.css?v=512-13" rel="stylesheet" type="text/css" />
+    <link href="https://samaritans.tfaforms.net/uploads/themes/theme-2.css" rel="stylesheet" type="text/css" />
+    <link href="https://samaritans.tfaforms.net/dist/form-builder/5.0.0/wforms-jsonly.css?v=512-13" rel="alternate stylesheet" title="This stylesheet activated by javascript" type="text/css" />
+    <script type="text/javascript" src="https://samaritans.tfaforms.net/wForms/3.11/js/wforms.js?v=512-13"></script>
+    <script type="text/javascript">
+    wFORMS.behaviors.prefill.skip = false;
+    </script>
+    <script type="text/javascript" src="https://samaritans.tfaforms.net/wForms/3.11/js/localization-en_GB.js?v=512-13"></script>
+</head>
+<body class="default wFormWebPage">
+    <div id="tfaContent">
+        <div class="wFormContainer"  >
+            <div class="wFormHeader"></div>
+            <style type="text/css"></style><div class=""><div class="wForm" id="6-WRPR" dir="ltr">
+            <div class="codesection" id="code-6"></div>
+            <h3 class="wFormTitle" id="6-T">Request an account</h3>
+            <form method="post" action="https://samaritans.tfaforms.net/responses/processor" class="hintsBelow labelsAbove" id="6" role="form">
+            <div class="htmlSection" id="tfa_20"><div class="htmlContent" id="tfa_20-HTML">You need an account to access Samaritans services like Samsnet and eLog.</div></div>
+            <div id="tfa_1" class="section group">
+            <label class="label preField" id="tfa_1-L"><b>Contact details</b></label><br><div class="oneField field-container-D    " id="tfa_2-D">
+            <label id="tfa_2-L" class="label preField reqMark" for="tfa_2">First name</label><br><div class="inputWrapper"><input type="text" id="tfa_2" name="tfa_2" value="" placeholder="eg. Jane" aria-required="true" title="First name" class="required"></div>
+            </div>
+            <div class="oneField field-container-D    " id="tfa_4-D">
+            <label id="tfa_4-L" class="label preField reqMark" for="tfa_4">Last name</label><br><div class="inputWrapper"><input type="text" id="tfa_4" name="tfa_4" value="" placeholder="eg. Smith" aria-required="true" title="Last name" class="required"></div>
+            </div>
+            <div class="oneField field-container-D    " id="tfa_6-D">
+            <label id="tfa_6-L" class="label preField " for="tfa_6">Display name</label><br><div class="inputWrapper">
+            <input type="text" id="tfa_6" name="tfa_6" value="" placeholder="eg. Sam 220" aria-describedby="tfa_6-HH" title="Display name" class=""><span class="field-hint-inactive" id="tfa_6-H"><span id="tfa_6-HH" class="hint">Optional. If you choose to set a display name, your real name will only be seen by other </span></span>
+            </div>
+            </div>
+            <div class="oneField field-container-D    " id="tfa_8-D">
+            <label id="tfa_8-L" class="label preField " for="tfa_8">Email</label><br><div class="inputWrapper">
+            <input type="text" id="tfa_8" name="tfa_8" value="" placeholder="eg. Sam 220" aria-describedby="tfa_8-HH" title="Email" class=""><span class="field-hint-inactive" id="tfa_8-H"><span id="tfa_8-HH" class="hint">We'll send important information about your account here, so make sure it's an email you can access it.</span></span>
+            </div>
+            </div>
+            </div>
+            <div id="tfa_9" class="section group">
+            <label class="label preField" id="tfa_9-L"><b>Branches</b></label><br><div class="oneField field-container-D    " id="tfa_10-D">
+            <label id="tfa_10-L" class="label preField " for="tfa_10">Branches</label><br><div class="inputWrapper">
+            <select id="tfa_10" multiple name="tfa_10[]" title="Branches" aria-describedby="tfa_10-HH" class=""><option value="">Please select...</option>
+            <option value="tfa_11" id="tfa_11" class="">Scunthorpe</option>
+            <option value="tfa_12" id="tfa_12" class="">Birmingham</option>
+            <option value="tfa_13" id="tfa_13" class="">Solihull</option>
+            <option value="tfa_14" id="tfa_14" class="">Bradford</option>
+            <option value="tfa_15" id="tfa_15" class="">Manchester</option></select><span class="field-hint-inactive" id="tfa_10-H"><span id="tfa_10-HH" class="hint">Choose every branch you are joining, if any. Hold down your Ctrl or Cmd key to select more than one branch.</span></span>
+            </div>
+            </div>
+            </div>
+            <div id="tfa_16" class="section group">
+            <label class="label preField" id="tfa_16-L"><b>Important information</b></label><br><div class="htmlSection" id="tfa_17"><div class="htmlContent" id="tfa_17-HTML"><div>To request an account, you need to be a current Samaritans volunteer, staff member or external partner.</div><div><br></div><div>You need to read and agree to the <a href="#" target="_blank">terms of use</a> and <a href="#" target="_blank">privacy policy</a>.</div><div><br></div><div>Samaritans will use your personal contact details to communicate with you about volunteering, your account and other administrative matters.</div><div><br></div><div>You can opt out of receiving some communications by changing your contact preferences from your profile.</div></div></div>
+            </div>
+            <div class="oneField field-container-D    " id="tfa_18-D" role="group" aria-labelledby="tfa_18-L"><div class="inputWrapper"><span id="tfa_18" class="choices vertical required"><span class="oneChoice"><input type="checkbox" value="tfa_19" class="" id="tfa_19" name="tfa_19" aria-labelledby="tfa_18-L tfa_19-L"><label class="label postField" id="tfa_19-L" for="tfa_19"><span class="input-checkbox-faux"></span>I understand and agree</label></span></span></div></div>
+            <div class="actions" id="6-A"><input type="submit" class="primaryAction" id="submit_button" value="Submit request"></div>
+            <div style="clear:both"></div>
+            <input type="hidden" value="6" name="tfa_dbFormId" id="tfa_dbFormId"><input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId"><input type="hidden" value="28a4cd187f11d6bbcecba7d47e63371c" name="tfa_dbControl" id="tfa_dbControl"><input type="hidden" value="3" name="tfa_dbVersionId" id="tfa_dbVersionId"><input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
+            </form>
+            </div></div><div class="wFormFooter"><p class="supportInfo"><br></p></div>
+            <p class="supportInfo" ></p>
+        </div>    
+    </div>
+    <script src='https://samaritans.tfaforms.net/js/iframe_resize_helper_internal.js'></script>
+</body>
+</html>
